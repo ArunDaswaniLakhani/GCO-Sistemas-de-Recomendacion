@@ -1,19 +1,25 @@
-def cargar_matriz(archivo):
-  with open(archivo, 'r') as f:
+import os
+
+def cargar_matriz(nombre_archivo):
+  ruta = os.path.join('examples-utility-matrices', nombre_archivo)
+  with open(ruta, 'r') as f:
     lineas = f.readlines()
-    
-  min_val = int(lineas[0].strip())
-  max_val = int(lineas[1].strip())
-  
+
+  min_val = float(lineas[0])
+  max_val = float(lineas[1])
+
   matriz = []
   for linea in lineas[2:]:
-    fila = list(map(int, linea.strip().split()))
+    fila = []
+    for valor in linea.strip().split():
+      if valor == '-':
+        fila.append(valor)
+      else:
+        try:
+          fila.append(float(valor))
+        except ValueError:
+          fila.append(valor)
     matriz.append(fila)
-  print("Mínimo valor:", min_val)
-  print("Máximo valor:", max_val)
-  print("Matriz:")
-  for fila in matriz:
-    print(fila)
   return (min_val, max_val, matriz)
 
 # Ejemplo de uso:

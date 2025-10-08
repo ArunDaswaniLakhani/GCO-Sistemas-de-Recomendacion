@@ -12,8 +12,7 @@ import sys
 # 1.3 5.0 5.0 2.0 1.1
 
 # Llamo a la funcion
-
-def Print_matriz(M: List[List[float]], min, max):
+def Print_matriz(M: List[List[any]], min, max):
   for i in range(len(M)):
     for j in range(len(M[0])):
       if j == 0:
