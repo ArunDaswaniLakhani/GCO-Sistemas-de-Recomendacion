@@ -1,3 +1,10 @@
+# Respecto a la complitud de la matriz, para valorar si usamos las filas predichas, 
+# tenemos que tener en cuenta la cantidad de incógnitas, 
+# ya que por ejemplo si hay mas de 50% de incognitas
+# entonces usamos las preicciones y sino, no.
+# tambien podemos poner de restriccion para las simulitudes las que esten por encima de 0
+
+
 import os
 
 def cargar_matriz(nombre_archivo):
