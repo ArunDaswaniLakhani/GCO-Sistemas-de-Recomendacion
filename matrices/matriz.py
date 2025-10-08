@@ -1,4 +1,6 @@
 from typing import List
+from fichero import cargar_matriz
+import sys
 
 #Se hacen las recomendaciones aqui
 
@@ -22,10 +24,12 @@ def Print_matriz(M: List[List[float]], min, max):
     print()
 
 def main():
-  min_max = []
-  min = min_max[0]
-  max = min_max[1]
-  Maztriz = [[]]
+  if len(sys.argv) < 2:
+    print("Uso: python3 matriz.py <nombre_archivo>")
+    exit(1)
+
+  archivo = sys.argv[1]
+  min, max, Matriz = cargar_matriz(archivo)
   opcion = 0
   while (True ):
     opcion = int(input("Quieres ver la matriz cargada? 1, si / 0, no"))
@@ -33,8 +37,8 @@ def main():
       break
 
   if(opcion == 1):
-    Print_matriz(Maztriz,min,max)
+    Print_matriz(Matriz,min,max)
 
 
-
+main()
 
