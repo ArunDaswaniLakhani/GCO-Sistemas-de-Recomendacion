@@ -4,9 +4,7 @@ import math
 import numpy as np
 from math import isnan, sqrt
 
-# ====================================================
 # Cargar matriz
-# ====================================================
 
 def cargar_matriz(nombre_archivo):
   ruta = os.path.join('examples-utility-matrices', nombre_archivo)
@@ -27,10 +25,7 @@ def cargar_matriz(nombre_archivo):
     matriz.append(fila)
   return (min_val, max_val, np.array(matriz, dtype=np.float64))
 
-
-# ====================================================
 # Métricas de similitud
-# ====================================================
 
 def pearson_correlation(x, y):
   # Filtramos pares válidos (no NaN)
@@ -80,9 +75,7 @@ def euclidean_similarity(matrix):
   return sim
 
 
-# ====================================================
 # Predicciones
-# ====================================================
 
 def get_neighbors(similarity, user, k):
   sims = similarity[user]
