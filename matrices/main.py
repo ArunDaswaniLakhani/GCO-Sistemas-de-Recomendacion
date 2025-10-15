@@ -105,10 +105,7 @@ def predict_with_mean(matrix, similarity, user, item, k):
       den += sim
   return np.nan if den == 0 else user_mean + num / den
 
-
-# ====================================================
 # Utilidades de impresión
-# ====================================================
 
 def Print_matriz(M):
   for fila in M:
